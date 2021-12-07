@@ -1,1 +1,20 @@
-<p>data-binding works!</p>
+<section class="property-binding">
+  <article>
+    <h3>Interpolation / Interpolação</h3>
+    <p>String renderiza com interpolação: {{ url }}</p>
+    <p>Soma Direta [ 1 + 1 = {{ 1 + 1 }} ]</p>
+    <p>Soma por metodo 1 + 1 + getValue(2) = {{ 1 + 1 + getValue(2) }}</p>
+  </article>
+
+  <article>
+    <h3>Property Binding</h3>
+    <!--  <img src="{{ urlLoremImagem }}" alt="" /> Interpolation -->
+    <!-- <img bind-src="urlLoremImagem" alt="" />  Property binding  -->
+    <!-- Property binding sugar sintaxy -->
+    <img [src]="urlLoremImagem" alt="" />
+  </article>
+
+  <article>
+    <h3>Class and Style Binding</h3>
+  </article>
+</section>
