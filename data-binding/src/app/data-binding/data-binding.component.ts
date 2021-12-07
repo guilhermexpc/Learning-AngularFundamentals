@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
   url: string = 'http:loiane.com';
-  urlLoremImagem: string = 'https://picsum.photos/400/300';
+  urlLoremImagem: string = 'https://picsum.photos/400/60';
 
-  getValue(value: number) {
+  dataBindingGetValue(value: number) {
     return value;
   }
 

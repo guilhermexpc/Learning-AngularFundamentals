@@ -3,18 +3,74 @@
     <h3>Interpolation / Interpolação</h3>
     <p>String renderiza com interpolação: {{ url }}</p>
     <p>Soma Direta [ 1 + 1 = {{ 1 + 1 }} ]</p>
-    <p>Soma por metodo 1 + 1 + getValue(2) = {{ 1 + 1 + getValue(2) }}</p>
+    <p>
+      Soma por metodo 1 + 1 + getValue(2) = {{ 1 + 1 + dataBindingGetValue(2) }}
+    </p>
   </article>
 
   <article>
     <h3>Property Binding</h3>
-    <!--  <img src="{{ urlLoremImagem }}" alt="" /> Interpolation -->
-    <!-- <img bind-src="urlLoremImagem" alt="" />  Property binding  -->
+    <!-- <img src="{{ urlLoremImagem }}" alt="" /> Interpolation
+    <img bind-src="urlLoremImagem" alt="" />  Property binding  -->
     <!-- Property binding sugar sintaxy -->
     <img [src]="urlLoremImagem" alt="" />
   </article>
 
   <article>
     <h3>Class and Style Binding</h3>
+    <div>
+      Selecione uma class:
+      <select #selectClass (change)="(0)">
+        <option value="alert-success">Success</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-danger">Danger</option>
+      </select>
+      <br />
+      <br />
+
+      <div class="alert {{ selectClass.value }}" role="alert">
+        Texto colorido de acordo com a cor do combo box;
+      </div>
+
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-success]="selectClass.value === 'alert-success'"
+      >
+        Success
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-info]="selectClass.value === 'alert-info'"
+      >
+        Info
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-warning]="selectClass.value === 'alert-warning'"
+      >
+        Warning
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-danger]="selectClass.value === 'alert-danger'"
+      >
+        Danger
+      </div>
+
+      <div
+        class="alert {{ selectClass.value }}"
+        role="alert"
+        [style.display]="
+          selectClass.value === 'alert-danger' ? 'block' : 'none'
+        "
+      >
+        Este texto aparece somento em caso de erro.
+      </div>
+    </div>
   </article>
 </section>
