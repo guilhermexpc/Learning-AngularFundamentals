@@ -1,5 +1,8 @@
-<section class="property-binding">
-  <article>
+<section
+  class="property-binding"
+  style="padding: 8px; background-color: black; color: white; height: 800px"
+>
+  <!-- <article>
     <h3>Interpolation / Interpolação</h3>
     <p>String renderiza com interpolação: {{ url }}</p>
     <p>Soma Direta [ 1 + 1 = {{ 1 + 1 }} ]</p>
@@ -10,9 +13,9 @@
 
   <article>
     <h3>Property Binding</h3>
-    <!-- <img src="{{ urlLoremImagem }}" alt="" /> Interpolation
-    <img bind-src="urlLoremImagem" alt="" />  Property binding  -->
-    <!-- Property binding sugar sintaxy -->
+     <img src="{{ urlLoremImagem }}" alt="" /> Interpolation
+    <img bind-src="urlLoremImagem" alt="" />  Property binding  
+     Property binding sugar sintaxy
     <img [src]="urlLoremImagem" alt="" />
   </article>
 
@@ -73,4 +76,59 @@
       </div>
     </div>
   </article>
+
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button class="btn btn-primary" (click)="onButtonClick()">Click</button>
+    </div>
+    <hr />
+    <input
+      #inputText
+      type="text"
+      (keyup)="onKeyUp($event)"
+      (keyup.enter)="onKeyEnter(inputText.value); inputText.value = ''"
+      (blur)="onKeyEnter(inputText.value); inputText.value = ''"
+    />
+    <p>{{ inputValue }}</p>
+    <hr />
+    <span
+      (mouseover)="onMouseOverOut()"
+      (mouseout)="onMouseOverOut()"
+      [class.highlight]="isMouseOver"
+    >
+      Passe o mouse sobre mim
+    </span>
+  </article>
+
+  <section class="two-way-binding">
+    <article>
+      <h3>Two-way data binding</h3>
+      <div style="flex: content; flex-direction: column">
+        <p>Metodo Tradicional</p>
+        <input
+          #inputValue
+          type="text"
+          [value]="twowayName"
+          (input)="twowayName = inputValue.value"
+        />
+        <p>Você digitou: {{ twowayName }}</p>
+
+        <input
+          #inputValue2
+          type="text"
+          [(ngModel)]="twowayName2"
+          (ngModelChange)="twowayName2 = inputValue2.value"
+        />
+
+        <p>Você digitou: {{ twowayName2 }}</p>
+        <hr />
+
+        <input type="text" [(ngModel)]="objectPessoa.nome" />
+        <input type="text" [(ngModel)]="objectPessoa.idade" />
+        <p>Nome: {{ objectPessoa.nome }} - Idade: {{ objectPessoa.idade }}</p>
+      </div>
+    </article>
+  </section>
+   -->
 </section>
