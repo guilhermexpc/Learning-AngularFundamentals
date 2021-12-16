@@ -131,4 +131,13 @@
     </article>
   </section>
    -->
+  <hr />
+  <section class="input-output-properties">
+    <article>
+      <h3>Input/Output Properties</h3>
+      <app-curso [name]="nomeDoCurso"></app-curso>
+      <contador [value]="initialValue" (changeValue)="onChangeValue($event)">
+      </contador>
+    </article>
+  </section>
 </section>

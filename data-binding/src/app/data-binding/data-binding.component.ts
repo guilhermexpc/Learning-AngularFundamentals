@@ -1,5 +1,5 @@
 import { Component, createPlatform, OnInit } from '@angular/core';
-
+import { EventEmmiterOutPut } from '../output-property/output-property.component';
 @Component({
   selector: 'app-data-binding',
   templateUrl: './data-binding.component.html',
@@ -14,10 +14,14 @@ export class DataBindingComponent implements OnInit {
   twowayName: string = 'abc';
   twowayName2: string = 'abc';
 
+  initialValue: number = 15;
+
   objectPessoa = {
     nome: 'def',
     idade: 20,
   };
+
+  nomeDoCurso: string = 'Angular';
 
   dataBindingGetValue(value: number) {
     return value;
@@ -38,6 +42,10 @@ export class DataBindingComponent implements OnInit {
 
   onMouseOverOut() {
     this.isMouseOver = !this.isMouseOver;
+  }
+
+  onChangeValue(event: EventEmmiterOutPut) {
+    console.log(event.newValue);
   }
 
   constructor() {}
