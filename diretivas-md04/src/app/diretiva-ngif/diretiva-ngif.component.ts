@@ -8,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class DiretivaNGifComponent implements OnInit {
   cursos: string[] = ['Angular2'];
 
+  mostrarCursos: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onMostrarCursos() {
+    this.mostrarCursos = !this.mostrarCursos;
+  }
 }
