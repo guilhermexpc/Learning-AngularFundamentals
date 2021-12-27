@@ -2,3 +2,20 @@
 <button appFundoAmarelo>Texto fundo amarelo</button>
 <hr />
 <p highlightMouse>Passe o mouse</p>
+
+<p highlightcomplete [defaultColor]="'grey'" [highlightColor]="'lightgreen'">
+  Highlight com cores customizadas
+</p>
+
+<p>ngElse</p>
+<div *ngIf="mostrarCursos">Lista de cursos aqui.</div>
+<div *ngElse="mostrarCursos">Não existem cursos para serem listados.</div>
+
+<div *ngIf="mostrarCursos; else ngElse">
+  Content to render when condition is true.
+</div>
+<ng-template #ngElse>
+  <div>Content to render when condition is false.</div>
+</ng-template>
+
+<button (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
