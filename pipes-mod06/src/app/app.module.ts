@@ -7,16 +7,9 @@ import { ExemplosComponent } from './exemplos/exemplos.component';
 import { CamelCasePipe } from './camel-case.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ExemplosComponent,
-    CamelCasePipe
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, ExemplosComponent, CamelCasePipe],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

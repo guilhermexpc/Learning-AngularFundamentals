@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-exemplos',
@@ -18,6 +19,10 @@ export class ExemplosComponent implements OnInit {
   livros: string[] = ['Java', 'Angular 2'];
 
   filtro: string = '';
+
+  valorAsync = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Valor assíncrono'), 2000);
+  });
 
   constructor() {}
 
